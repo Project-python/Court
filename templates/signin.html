@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} Реєстрація{% endblock %}
+{% block main %}
+
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Ім'я користувача" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Пароль" type="password">
+
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirm" placeholder="Пароль(повторно)" type="password">
+            </div>
+        <button class="btn btn-primary" type="submit">Зареєструватися</button>
+
+    </form>
+{% endblock %}

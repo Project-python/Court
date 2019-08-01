@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Мої засідання {% endblock %}
+
+{% block main %}<br>
+    {% if not check %}
+<a href="/google_auth">Підключити гугл календар</a>
+{% endif %}
+    {% for i in content %}
+{#        {% for i,b,c in item %}#}
+        Дата засідання : {{ i[0] }} , {{ i[1] }} , {{ i[2] }}
+{#            {% endfor %}#}
+        <br>
+    {% endfor %}
+
+{% endblock %}

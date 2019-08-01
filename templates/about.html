@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Про нас{% endblock %}
+
+{% block main %}
+<br>
+<br>
+<form action="/about" method="post">
+	    <label for="sud"><b>Код суду</b></label>
+	    <input type="text" name="sud">
+
+	    <label for="nomber"><b>Номер справи</b></label>
+	    <input type="text" name="nomber">
+
+	    <input type="submit">
+
+<br>
+<br>
+<p>{{session.username}}</p>
+
+<style type="text/css">
+.cwdtable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+.cwdtable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+.cwdtable tr {background-color:#ffffff;}
+.cwdtable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+.mobileTable {overflow:auto;width:100%}
+.cwdtable th,.cwdtable td{text-align:center}
+.cwdtable tr:hover {background-color:#ffff99;}
+</style>
+
+<div class="mobileTable">
+<table class="cwdtable" cellspacing="0" cellpadding="1" border="1">
+<tr><th>Дата та час судового засідання</th><th>Суддя</th><th>Форма</th><th>Номер справи</th><th>Сторони</th><th>Суть</th><th>Взяти в роботу</th></tr>
+
+{% for i in nom %}
+        <tr><td>{{i[1]}}</td><td>{{i[2]}}</td><td>{{i[3]}}</td><td>{{i[4]}}</td><td>{{i[5]}}</td><td>{{i[6]}}</td><td><a href="/add/{{i[0]}}">Прийняти</a></td></tr>
+{% endfor %}
+</table>
+</div>
+
+
+{% endblock %}
