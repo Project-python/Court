@@ -29,7 +29,6 @@ from oauth2client import file
 # from oauth2client.contrib.keyring_storage import Storage
 
 from oauth2client import client, tools, file
-# import oauth2client
 import httplib2
 import json
 import os
